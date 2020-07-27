@@ -1,0 +1,211 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="C:\Users\THISPC\Desktop\Website\css/MinionRush.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Sign in</title>
+
+  <style>
+    .radio{
+      color:black;
+      padding-left:10px;
+      padding-bottom:20px;
+      padding-top:20px;
+    }
+
+    .main{
+      height:750px;
+    }
+
+    .Form{
+      background-color: cyan;
+      padding-top: 60px;
+      margin-left: 40px;
+      text-align:center;
+      width: 300px;
+      height:350px;
+    }
+
+    .Password{
+      margin:20px;
+    }
+
+
+    .Email{
+      margin:20px;
+    }
+
+
+
+.Mobile{
+      margin:20px;
+    }
+
+.submit{
+  font-size:1rem;
+
+}
+
+.btn{
+  padding-right:70px;
+}
+
+
+
+
+
+
+
+
+  </style>
+
+   
+    <script>
+        function validateform()
+        {
+            var temp;
+            var nam=document.myform.Name.value;
+            var len=nam.length;
+            var pass=document.myform.Password.value;
+            var len1=pass.length;
+            var mail=document.myform.Email.value;
+            var len2=mail.length;
+            var Contact=document.myform.Mobile.value;
+            var len3=Contact.length;
+            alert(nam);
+            alert(mail);
+            alert(Contact);
+ 
+            if(len==0)
+            {
+                // document.getElementById("nam1").innerHTML="Name should not be blank";
+                // temp = false;
+                alert("Please enter your Name");
+                temp = false;
+            }
+            // else if(isNaN(nam)==false)
+            // {
+            //    alert("Numeric not Allowed")
+            //     temp = false;
+            // }
+            else if(len<3)
+            {
+                alert("Enter valid name ")
+                temp = false;
+            }
+           else if(len>10)
+            {
+                alert("Less characters required")
+                temp = false;
+            }
+
+            else if(len1==0)
+            {
+                // document.getElementById("nam1").innerHTML="Name should not be blank";
+                // temp = false;
+                alert("Please enter your Password");
+                temp=false;
+            }
+           //  else if(isNaN(pass)==false)
+           //  {
+           //     alert("valid pass required")
+           //      temp = false;
+           //  }
+            else if(len1<3)
+            {
+                alert("Enter valid password ")
+                temp = false;
+            }
+           else if(len1>10)
+            {
+                alert("Minimise your password")
+                temp = false;
+            }
+
+            else if(len2==0)
+            {
+              alert("Enter valid mail-id")
+              temp = false;
+            }
+
+             else if(len3==0)
+            {
+              alert("Enter valid Contact Details")
+              temp = false;
+            }
+
+            return temp;
+
+      var table = document.getElementById("myTable");
+      var row = table.insertRow(0);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      cell1.innerHTML = document.getElementById("Name").value;
+      cell2.innerHTML = document.getElementById("Password").value;
+      cell3.innerHTML = document.getElementById("Email").value;
+      cell4.innerHTML = document.getElementById("Contact").value;
+
+      document.getElementById("Name").value = "";
+      document.getElementById("Password").value = "";
+      document.getElementById("Email").value = "";
+      document.getElementById("Contact").value = "";
+    }
+
+
+</script>
+</head>
+
+<body>
+  <div class="main">
+    <img class="logo" src="C:\Users\THISPC\Downloads/logo.png"> 
+    <p class="sign" align="center">Sign in</p>
+    <div class="Form">
+
+      <form name="myform" method="POST" action="About.html" >
+        Name : <input type="text" class="Name" id="Name" name="Name"><br/>
+        <span id="nam1"></span><br/>
+        Password : <input type="password" class="Password" id="Password" name="Password">
+        <br>
+
+        Email : <input type="email" class="Email"  id="Email" name="Email">
+
+        Contact : <input type="text" class="Mobile" id="Mobile" name="Mobile"><br/>
+        
+
+      <div class="radio">
+        <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label><br>
+      <input type="radio" id="other" name="gender" value="other">
+      <label for="other">Other</label>
+
+      </div>
+            
+     <div class="btn">
+       <button type="submit" class="submit" value="submit" onclick="validateform();">SUBMIT</button>
+      
+     </div>
+           
+    </form>
+  </div>
+      <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+                
+    </div>
+
+    <div class="container">
+      <div class="content-first">
+        <h5 class="text-uppercase">LIST OF ENTRIES:- </h5>
+        <table id="myTable"></table>
+       
+</div>
+     
+</body>
+
+</html>
